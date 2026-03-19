@@ -5,28 +5,104 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Register - Chill</title>
+
+  <!-- CSS -->
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/auth.css">
 </head>
 
 <body class="auth-page">
-  <h1>Register Page</h1>
-  <div class="auth-box">
-    <img src="../assets/images/logo.png" class="logo">
-    <h2>Daftar Chill</h2>
-    <form action="login.html">
-      <input type="text" placeholder="Username" required>
-      <input type="password" placeholder="Password" required>
-      <input type="password" placeholder="Konfirmasi Password" required>
-      <button type="submit" class="btn">Daftar</button>
-      <button type="button" class="btn google">Daftar dengan Google</button>
-    </form>
-    <p>Sudah punya akun? <a href="login.html">Masuk</a></p>
-    <p>Belum punya akun? <a href="register.html">Daftar</a></p>
+
+  <div class="auth-container">
+
+    <!-- LOGO -->
+    <img src="../assets/icons/chill.png" class="logo" alt="Chill Logo">
+
+    <!-- BOX REGISTER -->
+    <div class="auth-box">
+      <h2>Daftar ke Chill</h2>
+
+      <form action="login.html">
+
+        <!-- USERNAME -->
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input 
+            type="text" 
+            id="username"
+            name="username" 
+            placeholder="Masukkan username" 
+            required
+          >
+        </div>
+
+        <!-- PASSWORD -->
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input 
+            type="password" 
+            id="password"
+            name="password" 
+            placeholder="Masukkan password" 
+            required
+          >
+        </div>
+
+        <!-- KONFIRMASI PASSWORD -->
+        <div class="form-group">
+          <label for="confirmPassword">Konfirmasi Password</label>
+          <input 
+            type="password" 
+            id="confirmPassword"
+            name="confirmPassword" 
+            placeholder="Ulangi password" 
+            required
+          >
+        </div>
+
+        <!-- BUTTON REGISTER -->
+        <button type="submit" class="btn full">
+          Daftar
+        </button>
+
+        <!-- DIVIDER -->
+        <div class="divider">
+          <span>atau</span>
+        </div>
+
+      </form>
+
+      <!-- GOOGLE REGISTER -->
+      <div id="g_id_onload"
+           data-client_id="ISI_CLIENT_ID_LO"
+           data-callback="handleCredentialResponse">
+      </div>
+
+      <div class="g_id_signin"
+           data-type="standard"
+           data-size="large"
+           data-theme="outline"
+           data-text="signup_with"
+           data-shape="rectangular"
+           data-logo_alignment="left">
+      </div>
+
+      <!-- LOGIN LINK -->
+      <p class="auth-switch">
+        Sudah punya akun?
+        <a href="login.html">Masuk</a>
+      </p>
+
+    </div>
   </div>
-</body>
-<script src="../js/main.js"></script>
-<script src="../js/auth.js"></script>
+
+  <!-- GOOGLE SCRIPT -->
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+  <!-- JS -->
+  <script src="../js/main.js"></script>
+  <script src="../js/auth.js"></script>
+
 </body>
 
 </html>

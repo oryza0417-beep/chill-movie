@@ -1,45 +1,93 @@
-/* RESET */
+/* ================= RESET ================= */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* BODY */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #0f0f0f;
-    color: white;
+/* ================= ROOT (VARIABLE) ================= */
+:root {
+    --primary: #e50914;
+    --dark: #0f0f0f;
+    --light: #ffffff;
+    --gray: #aaa;
 }
 
-/* GLOBAL CONTAINER */
+/* ================= BODY ================= */
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--dark);
+    color: var(--light);
+
+    letter-spacing: 0.3px;
+}
+
+/* ================= CONTAINER ================= */
 .container {
     width: 90%;
     max-width: 1200px;
     margin: auto;
 }
 
-/* BUTTON */
+/* ================= BUTTON ================= */
 .btn {
     padding: 10px 15px;
     border: none;
     cursor: pointer;
-    background-color: red;
-    color: white;
+
+    background-color: var(--primary);
+    color: var(--light);
+
     border-radius: 5px;
+    font-weight: bold;
+
+    transition: 0.3s;
 }
 
-/* LINK */
-a {
-    color: #ccc;
-    text-decoration: none;
+/* HOVER */
+.btn:hover {
+    background-color: #c40812;
+    transform: translateY(-2px);
 }
-/* SMOOTH SCROLL */
+
+/* ACTIVE */
+.btn:active {
+    transform: scale(0.97);
+}
+
+/* ================= LINK ================= */
+a {
+    color: var(--gray);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+a:hover {
+    color: var(--light);
+}
+
+/* ================= UTILITIES ================= */
+.flex {
+    display: flex;
+}
+
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* ================= SCROLL ================= */
 html {
     scroll-behavior: smooth;
 }
 
-/* BETTER FONT RENDER */
-body {
-    letter-spacing: 0.3px;
+/* ================= IMAGE ================= */
+img {
+    max-width: 100%;
+    display: block;
 }

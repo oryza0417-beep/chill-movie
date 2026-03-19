@@ -5,35 +5,95 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login - Chill</title>
+
   <!-- CSS -->
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/auth.css">
 </head>
 
 <body class="auth-page">
-  <h1>Login Page</h1>
-  <div class="auth-box">
-    <img src="../assets/images/logo.png" class="logo">
 
-    <h2>Masuk ke Chill</h2>
+  <div class="auth-container">
 
-    <form action="index.html">
-      <input type="text" placeholder="Username" required>
-      <input type="password" placeholder="Password" required>
+    <!-- LOGO -->
+    <img src="../assets/icons/chill.png" class="logo" alt="Chill Logo">
 
-      <a href="#" class="link">Lupa password?</a>
+    <!-- BOX LOGIN -->
+    <div class="auth-box">
+      <h2>Masuk ke Chill</h2>
 
-      <button type="submit" class="btn">Masuk</button>
-      <button type="button" class="btn google">Masuk dengan Google</button>
-    </form>
+      <form action="../index.html">
 
-    <p>Belum punya akun? <a href="register.html">Daftar</a></p>
+        <!-- USERNAME -->
+        <div class="form-group">
+          <label>Username</label>
+          <input 
+            type="text" 
+            name="username" 
+            placeholder="Masukkan username" 
+            required
+          >
+        </div>
+
+        <!-- PASSWORD -->
+        <div class="form-group">
+          <label>Password</label>
+          <input 
+            type="password" 
+            name="password" 
+            placeholder="Masukkan password" 
+            required
+          >
+        </div>
+
+        <!-- LUPA PASSWORD -->
+        <div class="auth-options">
+          <a href="#" class="link">Lupa password?</a>
+        </div>
+
+        <!-- BUTTON LOGIN -->
+        <button type="submit" class="btn full">
+          Masuk
+        </button>
+
+        <!-- DIVIDER -->
+        <div class="divider">
+          <span>atau</span>
+        </div>
+
+      </form>
+
+      <!-- GOOGLE LOGIN -->
+      <div id="g_id_onload"
+           data-client_id="ISI_CLIENT_ID_LO"
+           data-callback="handleCredentialResponse">
+      </div>
+
+      <div class="g_id_signin"
+           data-type="standard"
+           data-size="large"
+           data-theme="outline"
+           data-text="signin_with"
+           data-shape="rectangular"
+           data-logo_alignment="left">
+      </div>
+
+      <!-- REGISTER LINK -->
+      <p class="auth-switch">
+        Belum punya akun?
+        <a href="register.html">Daftar</a>
+      </p>
+
+    </div>
   </div>
 
-</body>
-<!-- JS -->
-<script src="../js/main.js"></script>
-<script src="../js/auth.js"></script>
+  <!-- GOOGLE SCRIPT -->
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+  <!-- JS -->
+  <script src="../js/main.js"></script>
+  <script src="../js/auth.js"></script>
+
 </body>
 
 </html>
